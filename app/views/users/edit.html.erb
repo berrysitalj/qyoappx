@@ -1,0 +1,50 @@
+<div class="user-show">
+  <div class="container-show">
+    
+    <% @user.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+    <% end %>
+
+    <%= form_tag("/users/#{@user.id}/update") do %>
+    <div class="content-show">
+      <table class="show-t">
+        <tr>
+          <th align="center" colspan="3">登録内容編集</th>
+        </tr>
+      
+        <tr>
+          <td class="show-t-num">1</td>
+          <td class="show-t-item">社員番号</td>
+          <td class="show-t-content"><input name="enum" value="<%= @user.enum %>"></td>
+        </tr>
+
+        <tr>
+          <td class="show-t-num">2</td>
+          <td class="show-t-item">所属</td>
+          <td class="show-t-content"><input name="dname" value="<%= @user.dname %>"></td>
+        </tr>
+        <tr>
+          <td class="show-t-num">3</td>
+          <td class="show-t-item">氏名</td>
+          <td class="show-t-content"><input name="name" value="<%= @user.name %>"></td>
+        </tr>
+        <tr>
+          <td class="show-t-num">4</td>
+          <td class="show-t-item">参照アドレス</td>
+          <td class="show-t-content show-t-address"><%= @refer %></td>
+        </tr>
+        <tr>
+          <td class="show-t-num">5</td>
+          <td class="show-t-item">パスワード</td>
+          <td class="show-t-content"><input type="password" name="password" value="<%= @user.password %>"></td>
+        </tr>
+      </table>
+    </div>
+    <div class="content-show edit-submit">
+      <input type="submit" value="保存">
+    </div>
+    <% end %>
+  </div>
+</div>
