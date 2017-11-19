@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>QyoAppx</title>
+    <title>QyoApp</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,66 @@
   </head>
 
   <body>
-    <%= yield %>
+<header>
+  <div class="header-logo">
+    <img src="/qyo.png">
+  </div>
+  <div class="header-right">
+    <img  class="shamei-img" src="/shamei.png">
+  </div>
+</header>
+
+
+
+
+
+<div class="link">
+<% if session[:user_id] %>
+  <div class="link_content">
+  </div>
+  <div class="link_content">
+    <%= link_to("ログアウト", "/logout", {method: :post}) %>
+  </div>
+  <% else %>
+  <div class="link_content">
+    <%= link_to("ログイン(user)", "/") %>
+  </div>
+  <div class="link_content">
+    <%= link_to("ログイン(admin)", "/login_admin") %> 
+  </div>
+  <% end %>
+</div>
+
+
+<div class="link">
+<% if session[:admin_id] %>
+  <div class="link_content">
+    <%= link_to("登録", "/signup") %>
+  </div>
+  <div class="link_content">
+    <%= link_to("一覧", "/users/index") %> 
+  </div>
+  <div class="link_content">
+  </div>
+  <div class="link_content">
+    <%= link_to("ログアウト", "/logout_admin", {method: :post}) %>
+  </div>
+  <% else %>
+  <% end %>
+</div>
+
+
+   <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+   <%= yield %>
+
+<footer>
+  <p>給与明細 Ver.1.0 Copyright 2017 Sogokanri Corp.All rights reserved.</p>
+</footer>
+
   </body>
 </html>

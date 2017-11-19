@@ -1,2 +1,25 @@
-<h1>Qyo#login_form_admin</h1>
-<p>Find me in app/views/qyo/login_form_admin.html.erb</p>
+<div class="login">
+    <div>管理者ログイン画面</div>
+
+      <% if @error_message %>
+        <div class="login-form-error">
+          <%= @error_message %>
+        </div>
+      <% end %>
+
+      <%= form_tag("/login_admin") do%>
+      <div class="login-container">
+      	<div class="login-content">
+          <span>管理者番号　</span>
+          <input name="name" value="<%= @name %>">
+        </div>
+        <div class="login-content">
+          <span>パスワード　</span>
+          <input type="password" name="password">
+        </div>
+        <div class="login-content">
+          <input type="submit" value="ログイン">
+        </div>
+      </div>
+      <% end %>
+</div>

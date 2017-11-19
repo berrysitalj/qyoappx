@@ -1,3 +1,57 @@
-// Place all the styles related to the qyo controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* ログイン共通 */
+.login-container {
+}
+
+.login-form-error {
+	color: red;
+	margin: 20px 15px;
+}
+
+.login-content {
+	margin: 20px 15px;
+}
+
+
+
+/* 明細画面 */
+.conteiner {
+    margin: 0px auto;
+	border: solid 0.5px black;
+	width: 1400px;
+	padding: 60px;
+}
+.qyo-content{
+    margin: 0px auto;
+    width: 1240px;
+}
+.qyo-content p {
+	font-size: 16px;
+}
+.qyo-content-form {
+	float: left;
+}
+.qyo-content-form-date {
+	font-size: 24px;
+	text-align: right;
+}
+.qyo-t-form{
+  
+}
+.qyo-t-form tr th, .qyo-t-form tr td {
+	width: 140px;
+}
+.qyo-t-form tr th {
+	background-color: #DDFFFF;
+}
+.qyo-t-form tr td {
+	height: 30px;
+	text-align: right;
+}
+#emform tr td {
+	text-align: center;
+}
+.qyo-show-title {
+	font-size: 36px;
+	margin: 30px;
+	text-align: center;
+}

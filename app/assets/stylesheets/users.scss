@@ -1,3 +1,127 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* border: solid 0.5px green; */
+
+
+/* users/index ================================ */
+/* コンテンツ全体 */
+.users-index {
+  margin: 0px auto;
+  width:720px;
+  padding: 20px;
+  text-align: center;
+}
+
+.index-uploader {
+  text-align: left;
+  margin-bottom: 50px;
+  background-color: #B1F9D0 ;
+  padding: 20px;
+}
+
+.index-uploader-form {
+  margin: 10px;
+  
+}
+.users-heading {
+  margin: 10px;
+  font-size: 24px;
+  text-align: center;
+
+}
+
+.index-container {
+  padding: 30px;
+  text-align: center;
+  background-color: #B1F9D0 ;
+}
+
+.index-table {
+  margin: 0px auto;
+  width:650px;
+}
+.index-t-num {
+  width:150px;
+}
+.index-t-group {
+  width:200px;
+}
+.index-t-name {
+  width:200px;
+  text-align: center;
+}
+.index-t-content {
+  width:100px;
+  text-align: center;
+}
+
+
+
+/* users/show ================================ */
+/* コンテンツ全体 */
+.user-show {
+  /* border: solid 0.5px green; */
+  margin: 0px auto;
+  width:600px;
+  padding: 20px
+}
+
+/* 編集ボタン～テーブル */
+.container-show {
+}
+
+/* 各コンテンツ */
+.content-show {
+margin-bottom: 10px;
+}
+.content-show div {
+text-align: center;
+}
+
+/* テーブル */
+.show-t-num {
+  width: 10px;
+  text-align: center;
+}
+.show-t-item {
+  width: 100px;
+}
+.show-t-content {
+  width: 400px;
+  word-break: break-all;
+}
+
+/* users/new, users/edit ================================ */
+
+.users-new {
+  margin: 50px auto;
+  width:400px;
+  padding: 10px 0px 50px 0px;
+  text-align: center;
+  background-color: #B1F9D0 ;
+}
+
+.users-new-form {
+  
+}
+
+
+
+
+
+
+.users-form input {
+  margin-bottom: 15px;
+}
+.show-t input {
+  width: 100px;
+  height: 20px;
+}
+.edit-submit {
+  text-align: center;
+}
+.show-t-address input {
+  width: 380px;
+}
+
+.users-new-input {
+  width: 500px;
+}

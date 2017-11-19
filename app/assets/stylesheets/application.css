@@ -13,3 +13,59 @@
  *= require_tree .
  *= require_self
  */
+
+header{
+    height: 100px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    border-bottom: solid 10px green;
+}
+
+.header-logo {
+  float: left;
+  padding: 10px;
+}
+
+.header-right{
+    float: right;
+    padding: 25px 15px 15px;
+}
+
+.shamei-img {
+  height: auto;
+  max-width: 200px;
+  padding-top: 20px;
+}
+
+
+* table {
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: 5px;
+  border: solid 1px black;
+}
+
+/* フッター */
+footer{
+    height: 100px;
+    margin-top: 20px;
+    text-align: center;
+    border-top: solid 10px green;
+}
+
+
+
+
+
+/* リンク */
+ .link{
+  background-color: #ffd;
+  display: flex;
+  margin: 10px;
+}
+
+.link_content{
+  margin: 10px;
+}

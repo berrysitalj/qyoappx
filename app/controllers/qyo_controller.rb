@@ -1,12 +1,211 @@
 class QyoController < ApplicationController
+  before_action :authenticate_user_and_admin,{only: [:show]}
+  before_action :authenticate_user_admin,{only: [:update]}
+  before_action :ensure_correct_user,{only: [:show]}
 
   def login_form
+  end
+
+  def login
+    @user = User.find_by(enum: params[:enum],
+                         password: params[:password])
+    if @user
+      session[:user_id] = @user.id
+      flash[:notice] = "ログインしました"
+      redirect_to("/qyo/#{@user.id}")
+    else
+      @error_message = "※社員番号またはパスワードが間違っています"
+      @enum = params[:enum]
+      @password = params[:password]
+      render("qyo/login_form")
+    end
   end
 
   def login_form_admin
   end
 
+  def login_admin
+    @admin = Admin.find_by(name: params[:name],
+                           password: params[:password])
+    if @admin
+      session[:admin_id] = @admin.id
+      flash[:notice] = "ログインしました"
+      redirect_to("/users/index")
+    else
+      @error_message = "※管理者番号またはパスワードが間違っています"
+      @name = params[:name]
+      @password = params[:password]
+      render("qyo/login_form_admin")
+    end
+  end
+
+  def logout
+    session[:user_id] = nil
+    flash[:notice] = "logoutしました"
+    redirect_to("/login")
+  end
+
+  def logout_admin
+    session[:admin_id] = nil
+    flash[:notice] = "admin_logoutしました"
+    redirect_to("/login_admin")
+  end
+
   def show
+  	@user = User.find_by(id: params[:id])
+    @cell = Cell.find_by(data1: @user.enum)
+    @admin = Admin.find_by(id: params[:id])
+
+  end
+
+  def update
+  	@user = User.find_by(id: params[:id]) 
+  	@cell = Cell.find_by(data1: @user.enum)
+
+    exfile = Refer.find_by(id: 1).filename
+    exsheet = @user.enum
+    if File.exist?(exfile)
+      s = Roo::Excelx.new(exfile)
+      begin
+        s.default_sheet = exsheet
+        @data1 = s.cell('E',4)
+        @data2 = s.cell('B',4)
+        @data3 = s.cell('H',4)
+        @data4 = exfile
+        @data5 = s.cell('AC',4)
+        @data6 = s.cell('C',7)
+        @data7 = s.cell('F',7)
+        @data8 = s.cell('I',7)
+        @data9 = s.cell('K',7)
+        @data10 = s.cell('M',7)
+
+        @data11 = s.cell('P',7)
+        @data12 = s.cell('R',7)
+        @data13 = s.cell('U',7)
+        @data14 = s.cell('C',9)
+        @data15 = s.cell('F',9)
+        @data16 = s.cell('I',9)
+        @data17 = s.cell('K',9)
+        @data18 = s.cell('M',9)
+        @data19 = s.cell('P',9)
+        @data20 = s.cell('R',9)
+
+        @data21 = s.cell('X',9)
+        @data22 = s.cell('C',12)
+        @data23 = s.cell('F',12)
+        @data24 = s.cell('I',12)
+        @data25 = s.cell('K',12)
+        @data26 = s.cell('M',12)
+        @data27 = s.cell('P',12)
+        @data28 = s.cell('R',12)
+        @data29 = s.cell('U',12)
+        @data30 = s.cell('C',14)
+
+        @data31 = s.cell('F',14)
+        @data32 = s.cell('I',14)
+        @data33 = s.cell('K',14)
+        @data34 = s.cell('M',14)
+        @data35 = s.cell('P',14)
+        @data36 = s.cell('R',14)
+        @data37 = s.cell('X',14)
+        @data38 = s.cell('C',18)
+        @data39 = s.cell('E',18)
+        @data40 = s.cell('G',18)
+
+        @data41 = s.cell('J',18)
+        @data42 = s.cell('L',18)
+        @data43 = s.cell('M',18)
+        @data44 = s.cell('N',18)
+        @data45 = s.cell('O',18)
+        @data46 = s.cell('P',18)
+        @data47 = s.cell('Q',18)
+        @data48 = s.cell('R',18)
+        @data49 = s.cell('ZZ',1)
+        @data50 = s.cell('ZZ',1)
+
+        @data51 = s.cell('ZZ',1)
+        @data52 = s.cell('ZZ',1)
+        @data53 = s.cell('T',18)
+        @data54 = s.cell('Z',1)
+        @data55 = s.cell('Z',1)
+        @data56 = s.cell('Z',1)
+        @data57 = s.cell('Z',1)
+        @data58 = s.cell('U',2)
+        @data59 = s.cell('W',2)
+        @data60 = s.cell('U',3)
+             
+        @cell.data1 = @data1
+        @cell.data2 = @data2
+        @cell.data3 = @data3
+        @cell.data4 = @data4
+        @cell.data5 = @data5
+        @cell.data6 = @data6
+        @cell.data7 = @data7
+        @cell.data8 = @data8
+        @cell.data9 = @data9
+        @cell.data10 = @data10
+        @cell.data11 = @data11
+        @cell.data12 = @data12
+        @cell.data13 = @data13
+        @cell.data14 = @data14
+        @cell.data15 = @data15
+        @cell.data16 = @data16
+        @cell.data17 = @data17
+        @cell.data18 = @data18
+        @cell.data19 = @data19
+        @cell.data20 = @data20
+        @cell.data21 = @data21
+        @cell.data22 = @data22
+        @cell.data23 = @data23
+        @cell.data24 = @data24
+        @cell.data25 = @data25
+        @cell.data26 = @data26
+        @cell.data27 = @data27
+        @cell.data28 = @data28
+        @cell.data29 = @data29
+        @cell.data30 = @data30
+        @cell.data31 = @data31
+        @cell.data32 = @data32
+        @cell.data33 = @data33
+        @cell.data34 = @data34
+        @cell.data35 = @data35
+        @cell.data36 = @data36
+        @cell.data37 = @data37
+        @cell.data38 = @data38
+        @cell.data39 = @data39
+        @cell.data40 = @data40
+        @cell.data41 = @data41
+        @cell.data42 = @data42
+        @cell.data43 = @data43
+        @cell.data44 = @data44
+        @cell.data45 = @data45
+        @cell.data46 = @data46
+        @cell.data47 = @data47
+        @cell.data48 = @data48
+        @cell.data49 = @data49
+        @cell.data50 = @data50
+        @cell.data51 = @data51
+        @cell.data52 = @data52
+        @cell.data53 = @data53
+        @cell.data54 = @data54
+        @cell.data55 = @data55
+        @cell.data56 = @data56
+        @cell.data57 = @data57
+        @cell.data58 = @data58
+        @cell.data59 = @data59
+        @cell.data60 = @data60
+  
+        @cell.save
+        redirect_to("/qyo/#{@user.id}")
+      rescue
+        @error_message = "社員No.に一致するシートが存在しません。"
+        render("qyo/show")
+      end
+    else
+      @error_message = "ファイルがありません。参照先を確認してください。"
+      render("qyo/show")
+    end
+
   end
 
 end

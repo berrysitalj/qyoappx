@@ -1,2 +1,26 @@
-<h1>Qyo#login_form</h1>
-<p>Find me in app/views/qyo/login_form.html.erb</p>
+<div class="login">
+    <div>社員ログイン画面</div>
+
+      <% if @error_message %>
+        <div class="login-form-error">
+          <%= @error_message %>
+        </div>
+      <% end %>
+
+      <%= form_tag("/login") do%>
+      <div class="login-container">
+      	<div class="login-content">
+          <span>社員番号　　</span>
+          <input name="enum" value="<%= @enum %>">
+        </div>
+        <div class="login-content">
+          <span>パスワード　</span>
+          <input type="password" name="password">
+        </div>
+        <div class="login-content">
+          <input type="submit" value="ログイン">
+        </div>
+      </div>
+      <% end %>
+  </div>
+

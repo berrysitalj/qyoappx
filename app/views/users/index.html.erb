@@ -1,2 +1,48 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<div class="users-index">
+  <div class="index-uploader">
+    <h1 class="users-heading">データ更新フォーム</h1>
+        <%= form_tag("/uploader/upload") do %>
+        <div class="index-uploader-form">
+          <p>・参照ファイルアドレス</p>
+          <input class="users-new-input" name="fname" value="<%= @refer %>">
+          <input type="submit" value="変更">
+          <p>※変更後は必ず変更ボタンを押してください</p>
+        </div>
+        <% end %>
+
+        <%= form_tag("/uploader/upload_all") do %>
+        <div class="index-uploader-form">
+         <p>・全社員のデータを更新</p>
+         <input type="submit" value="一括更新">
+        </div>
+        <% end %>
+        <% if @error_message %>
+        <div class="login-form-error">
+          <%= @error_message %>
+        </div>
+        <% end %>
+        
+  </div>
+  <div class="index-container">
+    <h1 class="users-heading">登録社員一覧</h1>
+     
+　　<table class="index-table">
+      <tr>
+        <th class="index-t-num">社員番号</th>
+        <th class="index-t-group">所属</th>
+        <th class="index-t-name">氏名</th>
+        <th class="index-t-content">明細表</th>
+      </tr>
+    <% @users.each do |user| %>
+      <tr>
+        <td class="index-t-num"><%= user.enum %></td>
+        <td class="index-t-group"><%= user.dname %></td>
+        <td class="index-t-name"><%= link_to(user.name, "/users/#{user.id}") %></td>
+        <td class="index-t-content"><%= link_to("明細表", "/qyo/#{user.id}") %></td>
+    <% end %>
+        
+      </tr>
+    </table>
+
+  </div>
+</div>
