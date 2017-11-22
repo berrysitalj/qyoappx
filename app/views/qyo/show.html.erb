@@ -1,11 +1,7 @@
 <div class="qyo-show">
   <div class="conteiner">
     <div class="qyo-content">
-      <% if session[:admin_id] %>
-        <%= form_tag("/qyo/#{@user.id}/update") do %>
-         <input type="submit" value="データ更新">
-        <% end %>
-      <% end %>
+      
       <% if @error_message %>
         <div class="login-form-error">
           <%= @error_message %>

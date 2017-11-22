@@ -1,19 +1,14 @@
 <div class="users-index">
   <div class="index-uploader">
     <h1 class="users-heading">データ更新フォーム</h1>
-        <%= form_tag("/uploader/upload") do %>
+        <%= form_tag("/uploader/upload_all", multipart: true) do %>
         <div class="index-uploader-form">
           <p>・参照ファイルアドレス</p>
-          <input class="users-new-input" name="fname" value="<%= @refer %>">
-          <input type="submit" value="変更">
-          <p>※変更後は必ず変更ボタンを押してください</p>
+          <%= file_field_tag :file %>
         </div>
-        <% end %>
-
-        <%= form_tag("/uploader/upload_all") do %>
         <div class="index-uploader-form">
-         <p>・全社員のデータを更新</p>
          <input type="submit" value="一括更新">
+         <p>↑ファイル選択後押す</p>
         </div>
         <% end %>
         <% if @error_message %>

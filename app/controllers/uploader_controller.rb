@@ -24,10 +24,11 @@ class UploaderController < ApplicationController
 
     def upload_all
     	@users = User.all
-        @refer = Refer.find_by(id: 1).filename
-    	exfile = @refer
-    	if File.exist?(exfile)
-    		s = Roo::Excelx.new(exfile)
+        # @refer = Refer.find_by(id: 1).filename
+    	# exfile = @refer
+        exfile = params[:file]
+    	# if File.exist?(exfile)
+    		s = Roo::Excelx.new(exfile.path)
 
         @users.each do |user|
           begin
@@ -167,10 +168,10 @@ class UploaderController < ApplicationController
           end
         end
        redirect_to("/users/index")
-      else
-        @error_message = "ファイルがありません。参照先を確認してください。"
-        render("users/index")
-      end
+      # else
+       # @error_message = "ファイルがありません。参照先を確認してください。"
+       # render("users/index")
+     # end
     end
 
 end
