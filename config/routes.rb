@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'products/import'
+
   get 'users/index' => 'users#index'
   get 'users/:id' => 'users#show'
   get 'signup' => 'users#new'

@@ -42,7 +42,7 @@ class QyoController < ApplicationController
   def logout
     session[:user_id] = nil
     flash[:notice] = "logoutしました"
-    redirect_to("/login")
+    redirect_to("/")
   end
 
   def logout_admin
