@@ -71,3 +71,9 @@ footer{
 .link_content{
   margin: 10px;
 }
+
+/* body */
+body{
+  margin: 0px auto;
+  width: 1150px;
+}
