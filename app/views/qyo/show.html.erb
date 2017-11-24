@@ -37,14 +37,14 @@
    
     <table class="qyo-t-form">
       <tr>
-        <th>6.基本給</th>
-        <th>7.</th>
-        <th>8.職能手当</th>
-        <th>9.残業手当</th>
-        <th>10.特別手当</th>
-        <th>11.役職手当</th>
-        <th>12.休日出勤</th>
-        <th>13.通勤費</th>
+        <th>基本給</th>
+        <th></th>
+        <th>職能手当</th>
+        <th>残業手当</th>
+        <th>特別手当</th>
+        <th>役職手当</th>
+        <th>休日出勤</th>
+        <th>通勤費</th>
       </tr>
       <tr>
         <td><%= number_with_delimiter(@cell.data6) %></td>
@@ -57,14 +57,14 @@
         <td><%= number_with_delimiter(@cell.data13) %></td>
       </tr>
       <tr>
-        <th>14.応援手当</th>
-        <th>15.</th>
-        <th>16.</th>
-        <th>17.</th>
-        <th>18.</th>
-        <th>19.</th>
-        <th>20.</th>
-        <th>21.支給額合計</th>
+        <th>応援手当</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th>支給額合計</th>
       </tr>
       <tr>
         <td><%= number_with_delimiter(@cell.data14) %></td>
@@ -84,14 +84,14 @@
 
     <table class="qyo-t-form">
       <tr>
-        <th>22.健康保険料</th>
-        <th>23.厚生年金保険料</th>
-        <th>24.雇用保険料</th>
-        <th>25.介護保険料</th>
-        <th>26.所得税</th>
-        <th>27.住民税</th>
-        <th>28.</th>
-        <th>29.</th>
+        <th>健康保険料</th>
+        <th>厚生年金保険料</th>
+        <th>雇用保険料</th>
+        <th>介護保険料</th>
+        <th>所得税</th>
+        <th>住民税</th>
+        <th></th>
+        <th></th>
       </tr>
       <tr>
         <td><%= number_with_delimiter(@cell.data22) %></td>
@@ -104,14 +104,14 @@
         <td><%= number_with_delimiter(@cell.data29) %></td>
       </tr>
       <tr>
-        <th>30.</th>
-        <th>31.</th>
-        <th>32.</th>
-        <th>33.</th>
-        <th>34.</th>
-        <th>35.</th>
-        <th>36.</th>
-        <th>37.控除合計額</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th>控除合計額</th>
       </tr>
       <tr>
         <td><%= number_with_delimiter(@cell.data30) %></td>
@@ -127,18 +127,18 @@
     </div>
 
     <div class="qyo-content">
-      <p>・勤怠状況</p>
+      <p>・勤怠状況/銀行振込額</p>
 
     <table class="qyo-t-form">
       <tr>
-        <th>38.勤務日数</th>
-        <th>39.勤務時間</th>
-        <th>40.残業時間</th>
-        <th>41.深夜時間</th>
-        <th>42.休出時間</th>
-        <th>43.有休日数</th>
-        <th>44.公休日数</th>
-        <th>45.欠勤日数</th>
+        <th>勤務日数</th>
+        <th>勤務時間</th>
+        <th>残業時間</th>
+        <th>深夜時間</th>
+        <th>休出時間</th>
+        <th>有休日数</th>
+        <th>公休日数</th>
+        <th>欠勤日数</th>
       </tr>
       <tr>
         <td><%= @cell.data38 %></td>
@@ -151,14 +151,14 @@
         <td><%= @cell.data45 %></td>
       </tr>
       <tr>
-        <th>46.遅刻/早退回数</th>
-        <th>47.遅刻/早退時間</th>
-        <th>48.有給残日数</th>
-        <th>49.</th>
-        <th>50.</th>
-        <th>51.</th>
-        <th>52.</th>
-        <th>53.銀行振込額</th>
+        <th>遅刻/早退回数</th>
+        <th>遅刻/早退時間</th>
+        <th>有給残日数</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th>銀行振込額</th>
       </tr>
       <tr>
         <td><%= @cell.data46 %></td>

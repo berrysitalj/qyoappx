@@ -17,28 +17,28 @@
 .conteiner {
     margin: 0px auto;
 	border: solid 0.5px black;
-	width: 1400px;
-	padding: 60px;
+	width: 1000px;
+	padding: 50px;
 }
 .qyo-content{
     margin: 0px auto;
-    width: 1240px;
+    width: 900px;
 }
 .qyo-content p {
-	font-size: 16px;
+	font-size: 18px;
 }
 .qyo-content-form {
 	float: left;
 }
 .qyo-content-form-date {
-	font-size: 24px;
+	font-size: 18px;
 	text-align: right;
 }
 .qyo-t-form{
-  
+  font-size: 14px;
 }
 .qyo-t-form tr th, .qyo-t-form tr td {
-	width: 140px;
+	width: 100px;
 }
 .qyo-t-form tr th {
 	background-color: #DDFFFF;
@@ -52,6 +52,6 @@
 }
 .qyo-show-title {
 	font-size: 36px;
-	margin: 30px;
 	text-align: center;
+	padding-bottom: 30px;
 }

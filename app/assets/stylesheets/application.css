@@ -16,9 +16,9 @@
 
 header{
     height: 100px;
-    margin-top: 10px;
-    margin-bottom: 0;
     border-bottom: solid 10px green;
+    margin: 0px auto;
+    width: 1150px;
 }
 
 .header-logo {
@@ -50,9 +50,11 @@ table th, table td {
 /* フッター */
 footer{
     height: 100px;
-    margin-top: 20px;
     text-align: center;
     border-top: solid 10px green;
+    margin: 0px auto;
+    width: 1150px;
+    margin-top: 50px;
 }
 
 
@@ -61,9 +63,9 @@ footer{
 
 /* リンク */
  .link{
-  background-color: #ffd;
   display: flex;
-  margin: 10px;
+  margin: 0px auto;
+  width: 1150px;
 }
 
 .link_content{
