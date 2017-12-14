@@ -35,8 +35,13 @@
         </tr>
       </table>
     </div>
-    <div class="content-show">
-      <div><%= link_to("編集", "/users/#{@user.id}/edit") %></div>
+    <div class="content-show content-show-link">
+      
+        <p><%= link_to("編集", "/users/#{@user.id}/edit") %></p>
+      
+      
+        <p><%= link_to("削除", "/users/#{@user.id}/destroy",{method: "post"}) %></p>
+      
     </div>
   </div>
 </div>
