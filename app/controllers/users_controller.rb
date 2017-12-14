@@ -204,7 +204,9 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find_by(id: params[:id])
+    @cell = Cell.find_by(data1: @user.enum)
     @user.destroy
+    @cell.destroy
     flash[:notice] = "ユーザーを削除しました"
     redirect_to("/users/index")
   end
